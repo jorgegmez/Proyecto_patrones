@@ -45,4 +45,24 @@ public class Character {
 		this.power = pPower;
 	}
 	
+	public void getObject() {
+		//Refactorizar después
+	}
+	
+	public void loadObject() {
+		//Refactorizar después
+	}
+	
+	public void addExperience() {
+		//Refactorizar después
+	}
+	
+	public void moveCharacter() {
+		//Refactorizar después
+	}
+	
+	public void attack() {
+		//Refactorizar después
+	}
+	
 }
