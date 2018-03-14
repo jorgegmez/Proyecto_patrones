@@ -13,4 +13,10 @@ public class GeneralFunctionsTest {
 		GeneralManager characterTest = new GeneralManager();
 		assertEquals(true,characterTest.createCharacter("Prueba1",100,5,5));
 	}	
+	
+	@Test
+	public void createMapTest() {
+		GeneralManager mapTest = new GeneralManager();
+		assertEquals(true,mapTest.createMap("Mapa1", null, null));
+	}
 }

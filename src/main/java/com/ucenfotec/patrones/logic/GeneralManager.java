@@ -29,5 +29,9 @@ public class GeneralManager {
         }
         return valid;
     }
+	
+	public boolean createMap(String pName, ArrayList<Object> pObjectList, Map[][] pMapSize) {
+		return true;
+	}
 
 }
