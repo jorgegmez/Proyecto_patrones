@@ -12,6 +12,5 @@ public class GeneralFunctionsTest {
 	public void createCharacterTest() {
 		GeneralManager characterTest = new GeneralManager();
 		assertEquals(true,characterTest.createCharacter("Prueba1",100,5,5));
-	}
-
+	}	
 }
