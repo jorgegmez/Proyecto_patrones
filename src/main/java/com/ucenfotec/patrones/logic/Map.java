@@ -1,17 +1,18 @@
 package com.ucenfotec.patrones.logic;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Map {
 	private String name;
-	private ArrayList<Object> objectList;
+	private Object object;
+	private Mission missionMap;
 	private Map[][] mapSize = new Map[20][20];
 	private Map[][] arena;
 	
-	public Map(String pName, ArrayList<Object> pObjectList, Map[][] pMapSize) {
+	public Map(String pName, Object pObject, Mission pMissionMap, Map[][] pMapSize) {
 		this.setName(pName);
-		this.setObjectList(pObjectList);
+		this.setObject(new Object());
+		this.setMissionMap(new Mission());
 		this.setMapSize(pMapSize);
 		this.setArena(pMapSize);
 	}
@@ -24,12 +25,22 @@ public class Map {
 		this.name = pName;
 	}
 
-	public ArrayList<Object> getObjectList() {
-		return objectList;
+
+	public Object getObject() {
+		return object;
 	}
 
-	public void setObjectList(ArrayList<Object> pObjectList) {
-		this.objectList = pObjectList;
+	public void setObject(Object pObject) {
+		this.object = pObject;
+	}
+	
+
+	public Mission getMissionMap() {
+		return missionMap;
+	}
+
+	public void setMissionMap(Mission pMissionMap) {
+		this.missionMap = pMissionMap;
 	}
 
 	public Map[][] getMapSize() {
@@ -50,9 +61,10 @@ public class Map {
 
 	@Override
 	public String toString() {
-		return "Map [name=" + name + ", objectList=" + objectList + ", mapSize=" +
-	                Arrays.toString(mapSize) + ", arena=" + Arrays.toString(arena) + "]";
+		return "Map [name=" + name + ", object=" + object + ", missionMap=" + missionMap + 
+				", mapSize=" + Arrays.toString(mapSize) + ", arena=" + Arrays.toString(arena) + "]";
 	}
 
+	
 	
 }
