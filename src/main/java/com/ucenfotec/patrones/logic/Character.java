@@ -64,5 +64,13 @@ public class Character {
 	public void attack() {
 		//Refactorizar después
 	}
+
+	@Override
+	public String toString() {
+		return "Character [name=" + name + ", health=" + health + ", experience=" +
+						  experience + ", power=" + power + "]";
+	}
+	
+	
 	
 }

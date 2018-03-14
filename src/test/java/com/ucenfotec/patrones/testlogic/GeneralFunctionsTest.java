@@ -8,6 +8,10 @@ import com.ucenfotec.patrones.logic.GeneralManager;
 
 public class GeneralFunctionsTest {
 
-	
+	@Test
+	public void createCharacterTest() {
+		GeneralManager characterTest = new GeneralManager();
+		assertEquals(true,characterTest.createCharacter("Prueba1",100,5,5));
+	}
 
 }

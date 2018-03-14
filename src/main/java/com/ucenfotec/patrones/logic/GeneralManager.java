@@ -17,7 +17,8 @@ public class GeneralManager {
         	FileWriter fw = new FileWriter("characters.txt", false);
         	BufferedWriter bw = new BufferedWriter(fw);
         	for(Character ch : characterList) {
-        		bw.write(ch.toString());
+        		String chText = ch.toString();
+        		bw.write(chText);
         		bw.newLine();
         	}
         	bw.close();
