@@ -11,10 +11,10 @@ public class Character implements IAttack, IAbility {
 	private ArrayList<Object> myObject;
 	
 	public Character(String pName, int pHealth, int pExperience, int pPower) {
-		this.name = pName;
-		this.health = pHealth;
-		this.experience = pExperience;
-		this.power = pPower;
+		this.setName(pName);
+		this.setHealth(pHealth);
+		this.setExperience(pExperience);
+		this.setPower(pPower);
 	}
 	
 	public Object getObject() {
@@ -41,7 +41,7 @@ public class Character implements IAttack, IAbility {
 
 	@Override
 	public int attack() {
-		return getPower();
+		return this.getPower();
 	}
 	
 	public String getName() {
