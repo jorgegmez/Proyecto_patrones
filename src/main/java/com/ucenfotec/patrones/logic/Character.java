@@ -9,6 +9,7 @@ public class Character implements IAttack, IAbility {
 	private int experience;
 	private int power;
 	private ArrayList<Object> myObject;
+	private ArrayList<Mission> myMissions;//Refactorizar (No estoy seguro)
 	
 	public Character(String pName, int pHealth, int pExperience, int pPower) {
 		this.setName(pName);
