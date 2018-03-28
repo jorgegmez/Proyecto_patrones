@@ -8,7 +8,7 @@ public class Character implements IAttack, IAbility {
 	private int health;
 	private int experience;
 	private int power;
-	private ArrayList<Item> myObject;
+	private ArrayList<Item> myItems;
 	private ArrayList<Mission> myMissions;//Refactorizar (No estoy seguro)
 	
 	public Character(String pName, int pHealth, int pExperience, int pPower) {
@@ -22,9 +22,9 @@ public class Character implements IAttack, IAbility {
 		return null;//Refactorizar después
 	}
 	
-	public ArrayList<Item> loadObject(Item pObject) {
-		myObject.add(pObject);
-		return myObject;//Refactorizar después
+	public ArrayList<Item> loadObject(Item pItem) {
+		myItems.add(pItem);
+		return myItems;//Refactorizar después
 	}
 	
 	public int addExperience() {
@@ -42,7 +42,7 @@ public class Character implements IAttack, IAbility {
 
 	@Override
 	public int attack() {
-		return this.getPower();
+		return this.getPower();//Refactorizar después
 	}
 	
 	public String getName() {
@@ -79,8 +79,9 @@ public class Character implements IAttack, IAbility {
 
 	@Override
 	public String toString() {
-		return "Character [name=" + name + ", health=" + health + ", experience=" + experience + 
-				", power=" + power + ", myObject=" + myObject + "]";
+		return "Character [name=" + name + ", health=" + health + ", experience=" + experience + ", power=" + power
+				+ ", myItems=" + myItems + ", myMissions=" + myMissions + "]";
 	}
+
 
 }

@@ -8,6 +8,10 @@ public class Item {
 		this.setName(pName);
 		this.setPower(pPower);
 	}
+	
+	public int addPowerToCharacterByItem() {
+		return 0;//Refactorizar después
+	}
 
 	public String getName() {
 		return name;

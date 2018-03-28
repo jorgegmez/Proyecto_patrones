@@ -44,7 +44,6 @@ public class Mission {
 	}
 
 
-
 	@Override
 	public String toString() {
 		return "Mission [name=" + name + ", objectives=" + objectives + "]";
