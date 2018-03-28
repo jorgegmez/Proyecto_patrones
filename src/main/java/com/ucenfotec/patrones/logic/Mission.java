@@ -32,8 +32,8 @@ public class Mission {
 	}
 
 	
-	public ArrayList<Objective> addObjetivesIntoMission(Objective pNewObjtive){
-		this.objectives.add(pNewObjtive);
+	public ArrayList<Objective> addObjetivesIntoMission(Objective pNewObjetive){
+		this.objectives.add(pNewObjetive);
 		
 		return objectives;
 	}

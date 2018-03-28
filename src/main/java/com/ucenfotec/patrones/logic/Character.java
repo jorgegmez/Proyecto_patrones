@@ -21,8 +21,8 @@ public class Character implements IAttack, IAbility {
 		return null;//Refactorizar después
 	}
 	
-	public ArrayList<Object> loadObject() {
-		myObject.add(null);
+	public ArrayList<Object> loadObject(Object pObject) {
+		myObject.add(pObject);
 		return myObject;//Refactorizar después
 	}
 	
