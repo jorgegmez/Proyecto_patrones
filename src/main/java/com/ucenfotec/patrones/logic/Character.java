@@ -8,7 +8,7 @@ public class Character implements IAttack, IAbility {
 	private int health;
 	private int experience;
 	private int power;
-	private ArrayList<Object> myObject;
+	private ArrayList<Item> myObject;
 	private ArrayList<Mission> myMissions;//Refactorizar (No estoy seguro)
 	
 	public Character(String pName, int pHealth, int pExperience, int pPower) {
@@ -18,11 +18,11 @@ public class Character implements IAttack, IAbility {
 		this.setPower(pPower);
 	}
 	
-	public Object getObject() {
+	public Item getObject() {
 		return null;//Refactorizar después
 	}
 	
-	public ArrayList<Object> loadObject(Object pObject) {
+	public ArrayList<Item> loadObject(Item pObject) {
 		myObject.add(pObject);
 		return myObject;//Refactorizar después
 	}

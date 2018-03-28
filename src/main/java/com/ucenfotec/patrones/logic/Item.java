@@ -1,10 +1,10 @@
 package com.ucenfotec.patrones.logic;
 
-public class Object {
+public class Item {
 	private String name;
 	private int power;
 	
-	public Object(String pName, int pPower) {
+	public Item(String pName, int pPower) {
 		this.setName(pName);
 		this.setPower(pPower);
 	}
