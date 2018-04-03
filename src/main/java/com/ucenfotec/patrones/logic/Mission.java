@@ -6,9 +6,8 @@ public class Mission {
 	private String name;
 	private ArrayList<Objective> objectives;
 	
-	public Mission(String pName, ArrayList<Objective> pObjectives) {
+	public Mission(String pName) {
 		this.setName(pName);
-		this.setObjectives(pObjectives);
 	}
 	
 	
@@ -21,20 +20,20 @@ public class Mission {
 		this.name = pName;
 	}
 
-
-	public ArrayList<Objective> getObjectives() {
-		return objectives;
-	}
-
-
-	public void setObjectives(ArrayList<Objective> pObjectives) {
-		this.objectives = pObjectives;
-	}
-
-	
-	public ArrayList<Objective> addObjetivesIntoMission(Objective pNewObjetive){
-		this.objectives.add(pNewObjetive);
 		
+	public void addObjetivesIntoMission(String pName, boolean pStatus){
+		Objective newObjective = new Objective(pName, pStatus);
+		
+		try {
+			this.objectives.add(newObjective);
+		}catch(Exception error) {
+			error.getClass();
+			error.getMessage();
+		}
+		
+	}
+	
+	public ArrayList<Objective> getObjectives() {
 		return objectives;
 	}
 

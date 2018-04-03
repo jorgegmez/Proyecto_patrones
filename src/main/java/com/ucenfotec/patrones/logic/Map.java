@@ -1,5 +1,8 @@
 package com.ucenfotec.patrones.logic;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -9,11 +12,9 @@ public class Map implements IGround {
 	private ArrayList<Item> mapItems;
 	private ArrayList<Mission> mapMissions;
 	
-	public Map(String pName, ArrayList<Item> pMapItems, ArrayList<Mission> pMapMissions, int pCantCol, int pCantRow) {
+	public Map(String pName, String[][] pArena) {
 		this.setName(pName);
-		this.setMapObjects(pMapItems);
-		this.setMapMissions(pMapMissions);
-		this.setArena(new String[pCantRow][pCantCol]);
+		this.setArena(pArena);
 	}
 	
 	
@@ -45,36 +46,41 @@ public class Map implements IGround {
 	}
 
 
-	public void setMapObjects(ArrayList<Item> pMapItems) {
-		this.mapItems = pMapItems;
-	}
-
-
 	public ArrayList<Mission> getMapMissions() {
 		return mapMissions;
 	}
 
-	
-	public void setMapMissions(ArrayList<Mission> pMapMissions) {
-		this.mapMissions = pMapMissions;
-	}
 
-	public ArrayList<Item> addObjetsIntoMap(Item pNewItem){
-		this.mapItems.add(pNewItem);
-		
-		return this.mapItems;
+	public void addObjetsIntoMap(String pNameItem, int pPowerItem){
+		Item newItem = new Item(pNameItem, pPowerItem);
+		try {
+			this.mapItems.add(newItem);
+		}catch(Exception error) {
+			error.getClass();
+			error.getMessage();
+		}
 	}
 	
-	public ArrayList<Mission> addMissionsIntoMap(Mission pNewMission){
-		this.mapMissions.add(pNewMission);
+	public void addMissionsIntoMap(String pNameMission, String pNameObjective){
+		boolean status = false;
+		Mission newMission = new Mission(pNameMission);
 		
-		return this.mapMissions;
+		
+		try {
+			newMission.addObjetivesIntoMission(pNameObjective, status);
+			this.mapMissions.add(newMission);
+
+		}catch(Exception error) {
+			error.getClass();
+			error.getMessage();
+		}
+		
 	}
 	
 
 	@Override
-	public String type() {
-		return null;//Refactorizar después
+	public String type(String pType) {
+		return pType;//Refactorizar después
 	}
 
 

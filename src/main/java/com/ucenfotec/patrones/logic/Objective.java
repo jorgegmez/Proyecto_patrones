@@ -4,9 +4,9 @@ public class Objective {
 	private String name;
 	private boolean status;
 	
-	public Objective(String pName) {
+	public Objective(String pName, boolean pStatus) {
 		this.setName(pName);
-		this.setStatus(false);
+		this.setStatus(pStatus);
 	}
 
 	public String getName() {

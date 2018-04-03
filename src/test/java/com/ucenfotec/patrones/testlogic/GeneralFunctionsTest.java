@@ -22,4 +22,10 @@ public class GeneralFunctionsTest {
 		assertEquals(true,enemyTest.createEnemy("Enemy1", 100, 2));
 	}
 	
+	@Test
+	public void createMapTest() {
+		GeneralManager mapTest = new GeneralManager();
+		assertEquals(true,mapTest.createMap("Map1", 20, 20, "Mission1", "Objetivo1", "Item1", 10));
+	}
+	
 }

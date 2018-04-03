@@ -53,4 +53,33 @@ public class GeneralManager {
         }
         return valid;
     }
+	
+	//Refactorizar después este metodo *Recibir una listas(ArrayList) talvez en vez de solo el nombre*
+	public boolean createMap(String pName, int pRow, int pCol, String pNameMission, String pNameObjective,
+			                 String pNameItem, int pPowerItem){
+        boolean valid;
+        String[][] arena = new String[pRow][pCol];
+        ArrayList<Map> mapList = new ArrayList<>();
+        Map newMap = new Map(pName, arena);
+        newMap.addMissionsIntoMap(pNameMission, pNameObjective);
+        newMap.addObjetsIntoMap(pNameItem, pPowerItem);
+        mapList.add(newMap);
+        
+        try {
+        	FileWriter fw = new FileWriter("maps.txt", false);
+        	BufferedWriter bw = new BufferedWriter(fw);
+        	for(Map mp : mapList) {
+        		bw.write(mp.toString());
+        		bw.newLine();
+        	}
+        	bw.close();
+        	valid = true;
+        }catch(IOException error) {
+        	error.printStackTrace();
+        	error.getMessage();
+        	error.getCause();
+        	valid = false;
+        }
+        return valid;
+    }
 }
