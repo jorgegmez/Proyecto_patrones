@@ -10,8 +10,20 @@ public class Enemy implements IAttack {
 		this.setHealth(pHealth);
 		this.setPower(pPower);
 	}
-		
+	
+	
+	public Enemy() {}
 
+
+	@Override
+	public int attack() {
+		Character character = new Character();
+		int myAttack = 0;
+		myAttack = character.getHealth() - getPower();
+		return myAttack;//Refactorizar
+	}
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -40,12 +52,6 @@ public class Enemy implements IAttack {
 
 	public void setPower(int pPower) {
 		this.power = pPower;
-	}
-
-
-	@Override
-	public int attack() {
-		return this.getPower();
 	}
 
 

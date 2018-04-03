@@ -11,6 +11,7 @@ public class Character implements IAttack, IAbility {
 	private ArrayList<Item> myItems;
 	private ArrayList<Mission> myMissions;//Refactorizar (No estoy seguro)
 	
+	
 	public Character(String pName, int pHealth, int pExperience, int pPower) {
 		this.setName(pName);
 		this.setHealth(pHealth);
@@ -18,6 +19,8 @@ public class Character implements IAttack, IAbility {
 		this.setPower(pPower);
 	}
 	
+	public Character() {}
+
 	public Item getObject() {
 		return null;//Refactorizar después
 	}
@@ -34,6 +37,7 @@ public class Character implements IAttack, IAbility {
 	public void moveCharacter() {
 		//Refactorizar después
 	}
+	
 
 	@Override
 	public String ability() {
@@ -42,8 +46,12 @@ public class Character implements IAttack, IAbility {
 
 	@Override
 	public int attack() {
-		return this.getPower();//Refactorizar después
+		Enemy enemy = new Enemy();
+		int myAttack = 0;
+		myAttack = enemy.getHealth() - getPower();
+		return myAttack;//Refactorizar
 	}
+
 	
 	public String getName() {
 		return name;
@@ -82,6 +90,5 @@ public class Character implements IAttack, IAbility {
 		return "Character [name=" + name + ", health=" + health + ", experience=" + experience + ", power=" + power
 				+ ", myItems=" + myItems + ", myMissions=" + myMissions + "]";
 	}
-
 
 }

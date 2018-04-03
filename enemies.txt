@@ -1,0 +1,1 @@
+Enemy [name=Enemy1, health=100, power=2]

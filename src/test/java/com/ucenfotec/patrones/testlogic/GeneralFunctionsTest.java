@@ -14,6 +14,12 @@ public class GeneralFunctionsTest {
 	public void createCharacterTest() {
 		GeneralManager characterTest = new GeneralManager();
 		assertEquals(true,characterTest.createCharacter("Character1", 100, 5, 5));
-	}	
+	}
+	
+	@Test
+	public void createEnemyTest() {
+		GeneralManager enemyTest = new GeneralManager();
+		assertEquals(true,enemyTest.createEnemy("Enemy1", 100, 2));
+	}
 	
 }

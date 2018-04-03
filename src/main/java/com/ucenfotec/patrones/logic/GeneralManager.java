@@ -23,6 +23,32 @@ public class GeneralManager {
         	valid = true;
         }catch(IOException error) {
         	error.printStackTrace();
+        	error.getMessage();
+        	error.getCause();
+        	valid = false;
+        }
+        return valid;
+    }
+	
+	public boolean createEnemy(String pName, int pHealth, int pPower){
+        boolean valid;
+        ArrayList<Enemy> enemyList = new ArrayList<>();
+        Enemy newCharacter = new Enemy(pName, pHealth, pPower);
+        enemyList.add(newCharacter);
+        
+        try {
+        	FileWriter fw = new FileWriter("enemies.txt", false);
+        	BufferedWriter bw = new BufferedWriter(fw);
+        	for(Enemy en : enemyList) {
+        		bw.write(en.toString());
+        		bw.newLine();
+        	}
+        	bw.close();
+        	valid = true;
+        }catch(IOException error) {
+        	error.printStackTrace();
+        	error.getMessage();
+        	error.getCause();
         	valid = false;
         }
         return valid;
