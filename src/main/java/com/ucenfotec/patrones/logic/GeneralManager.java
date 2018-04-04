@@ -55,14 +55,12 @@ public class GeneralManager {
     }
 	
 	//Refactorizar después este metodo *Recibir una listas(ArrayList) talvez en vez de solo el nombre*
-	public boolean createMap(String pName, int pRow, int pCol, String pNameMission, String pNameObjective,
-			                 String pNameItem, int pPowerItem){
+	public boolean createMap(String pName, int pRow, int pCol, ArrayList<Mission> pMyMissions,
+			                 ArrayList<Item> pMyItems){
         boolean valid;
         String[][] arena = new String[pRow][pCol];
         ArrayList<Map> mapList = new ArrayList<>();
-        Map newMap = new Map(pName, arena);
-        newMap.addMissionsIntoMap(pNameMission, pNameObjective);
-        newMap.addObjetsIntoMap(pNameItem, pPowerItem);
+        Map newMap = new Map(pName, arena, pMyMissions, pMyItems);
         mapList.add(newMap);
         
         try {

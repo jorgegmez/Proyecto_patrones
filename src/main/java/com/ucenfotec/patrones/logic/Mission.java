@@ -6,11 +6,15 @@ public class Mission {
 	private String name;
 	private ArrayList<Objective> objectives;
 	
-	public Mission(String pName) {
+	public Mission(String pName, ArrayList<Objective> pMyObjectives) {
 		this.setName(pName);
+		this.setObjectives(pMyObjectives);
 	}
 	
 	
+	public Mission() {}
+
+
 	public String getName() {
 		return name;
 	}
@@ -19,22 +23,31 @@ public class Mission {
 	public void setName(String pName) {
 		this.name = pName;
 	}
+	
 
 		
-	public void addObjetivesIntoMission(String pName, boolean pStatus){
+	public ArrayList<Objective> addObjetivesIntoMission(String pName, boolean pStatus){
 		Objective newObjective = new Objective(pName, pStatus);
 		
 		try {
-			this.objectives.add(newObjective);
+			if(this.objectives == null || this.objectives != null) {
+				this.objectives.add(newObjective);
+			}
 		}catch(Exception error) {
 			error.getClass();
 			error.getMessage();
 		}
 		
+		return this.objectives;
 	}
 	
+	public void setObjectives(ArrayList<Objective> pMyObjectives) {
+		this.objectives = pMyObjectives;
+	}
+
+
 	public ArrayList<Objective> getObjectives() {
-		return objectives;
+		return this.objectives;
 	}
 
 

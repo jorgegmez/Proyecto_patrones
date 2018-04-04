@@ -1,31 +1,44 @@
-package com.ucenfotec.patrones.testlogic;
+/*package com.ucenfotec.patrones.testlogic;
 
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
 
-import org.junit.Test;
+//import org.junit.Test;
 
-import com.ucenfotec.patrones.logic.GeneralManager;
+/*import com.ucenfotec.patrones.logic.GeneralManager;
+import com.ucenfotec.patrones.logic.Map;
+import com.ucenfotec.patrones.logic.Mission;
+
 
 
 
 public class GeneralFunctionsTest {
+	
+	static GeneralManager managerTest = new GeneralManager();
+	static Map mapTest = new Map();
+	static Mission missionMapTest = new Mission();
 
 	@Test
 	public void createCharacterTest() {
-		GeneralManager characterTest = new GeneralManager();
-		assertEquals(true,characterTest.createCharacter("Character1", 100, 5, 5));
+		assertEquals(true,managerTest.createCharacter("Character1", 100, 5, 5));
 	}
 	
 	@Test
 	public void createEnemyTest() {
-		GeneralManager enemyTest = new GeneralManager();
-		assertEquals(true,enemyTest.createEnemy("Enemy1", 100, 2));
+		assertEquals(true,managerTest.createEnemy("Enemy1", 100, 2));
 	}
 	
 	@Test
 	public void createMapTest() {
-		GeneralManager mapTest = new GeneralManager();
-		assertEquals(true,mapTest.createMap("Map1", 20, 20, "Mission1", "Objetivo1", "Item1", 10));
+		assertEquals(true,managerTest.createMap("MapTest1", 10, 10, mapTest.getMapMissions(), mapTest.getMapItems()));
 	}
 	
-}
+	@Test
+	public void createMapMissionsTest() {
+		assertEquals(mapTest.getMapMissions(),mapTest.addMissionsIntoMap("MissionTest1", missionMapTest.getObjectives()));
+	}
+	
+	@Test
+	public void createObjectivesMissionTest() {
+		assertEquals(missionMapTest.getObjectives(),missionMapTest.addObjetivesIntoMission("Objective1", false));
+	}
+}*/

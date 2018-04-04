@@ -1,4 +1,4 @@
-package com.ucenfotec.patrones;
+/* com.ucenfotec.patrones;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,4 +13,4 @@ public class ProyectoPatronesApplicationTests {
 	public void contextLoads() {
 	}
 
-}
+}*/
